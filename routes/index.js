@@ -48,5 +48,8 @@ router.get('/stop-all', async function (req, res, next) {
   isOn = false;
   return await res.send(isOn);
 });
+router.get('/', async function (req, res, next) {
+  return await res.json('cargoprime automate');
+});
 
 module.exports = router;
