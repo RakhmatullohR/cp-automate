@@ -5,6 +5,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var helloRouter = require('./routes/hello');
 var indexRouter = require('./routes/index');
 var skybitzRouter = require('./routes/skybitz');
 var phillipsRouter = require('./routes/phillips');
@@ -26,6 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', helloRouter);
 app.use('/api', indexRouter);
 
 app.use('/api/100', skybitzRouter);
